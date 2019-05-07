@@ -1,0 +1,47 @@
+#!/bin/bash
+# Website: https://t3chnocat.com
+
+# Text coloring
+yellow='\033[1;33m'
+red='\033[1;91m'
+nc='\033[0m'
+
+# User variables start
+
+smbserver=/usr/local/bin/impacket/examples/smbserver.py
+
+# User variables end
+
+echo
+echo -e "${yellow}This starts a simple SMB server${nc}"
+
+echo
+echo -e "${yellow}Enter the desired share name: ${nc}"
+read share
+
+echo
+echo -e "${yellow}Enter the directory to share (www, winbin, <dir> or . for current directory): ${nc}"
+read dir
+
+ip=$(/sbin/ifconfig tun0 | grep inet | cut -d" " -f10 | head -1)
+
+echo 
+#echo -e "Your share is \\\\$ip\\$share"
+echo -e "${yellow}Your share is \\\\\\$ip\\\\$share${nc}"
+echo 
+
+if [ "$dir" = "www" ];
+then python $smbserver $share /var/www/html -smb2support
+
+elif [ "$dir" = "winbin" ];
+then python $smbserver $share /usr/share/windows-binaries -smb2support
+
+elif [ "$dir" = "." ];
+then python $smbserver  $share . -smb2support
+
+else
+python $smbserver $share $dir -smb2support
+
+fi
+
+exit 1
