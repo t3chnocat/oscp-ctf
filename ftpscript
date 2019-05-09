@@ -10,6 +10,7 @@ echo
 echo -e "${yellow}This gives you a one liner to paste into a Windows host to create and run a ftp script."
 echo
 
+# change tun0 to your interface if needed
 ip=$(ifconfig tun0 | grep inet | cut -d" " -f10 | head -1)
 echo -e "Using IP address of tun0: $ip"
 echo
