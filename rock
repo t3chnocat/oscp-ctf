@@ -6,12 +6,15 @@ yellow='\033[1;33m'
 red='\033[1;91m'
 nc='\033[0m'
 
-# User variables start
+### User variables start
 
 # set this to the location of your John The Ripper
 john=/usr/local/bin/JohnTheRipper/run/john
 
+# set this to the location of your rockyou.txt
 rockyou=/usr/share/wordlists/rockyou.txt 
+
+### User variables end
 
 if [ -z "$1" ]
   then

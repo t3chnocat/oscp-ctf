@@ -17,6 +17,7 @@ echo
 echo -e "${yellow}Enter the directory (www, winbin, <dir> or . for current directory): ${nc}"
 read dir
 
+# change tun0 to your interface if needed
 ip=$(/sbin/ifconfig tun0 | grep inet | cut -d" " -f10 | head -1)
 
 echo 

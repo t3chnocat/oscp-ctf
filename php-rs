@@ -6,12 +6,12 @@ yellow='\033[1;33m'
 red='\033[1;91m'
 nc='\033[0m'
 
-# User variables start
+### User variables start
 
 # Default location in Kali is /usr/share/webshells/php/php-reverse-shell.php. Otherwise download here: http://pentestmonkey.net/tools/web-shells/php-reverse-shell
 shell=/usr/share/webshells/php/php-reverse-shell.php
 
-# User variables end
+### User variables end
 
 echo
 echo "${yellow}This script edits PentestMonkey's PHP reverse shell with your IP/port and copies it to the current path with a filename of your choice${nc}"
