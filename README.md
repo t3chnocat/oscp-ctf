@@ -23,6 +23,7 @@ Uses [impacket's](https://github.com/SecureAuthCorp/impacket) smbserver.py to st
 ### smb
 Same functionality as smb-menu without a menu.
 
+### Note:
 php-rs, rock, smb and smb-menu have user variables so check those before running.
 
 More information and screenshots can be found at this [blog post](https://www.t3chnocat.com/oscp-ctf-scripts/)
