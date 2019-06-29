@@ -25,16 +25,16 @@ echo -e "${yellow}Your URL is http://$ip:$port"
 echo 
 
 if [ "$dir" = "www" ];
-then cd /var/www/html && python -m SimpleHTTPServer $port
+then cd /var/www/html && echo -e "Contents of directory:${nc}" && echo && ls && echo -e ${yellow} && python -m SimpleHTTPServer $port
 
 elif [ "$dir" = "winbin" ];
-then cd /usr/share/windows-binaries && python -m SimpleHTTPServer $port
+then cd /usr/share/windows-binaries && echo -e "Contents of directory:${nc}" && echo && ls && echo -e ${yellow} && python -m SimpleHTTPServer $port
 
-elif [ "$dir" = "current" ];
-then python -m SimpleHTTPServer $port
+elif [ "$dir" = "." ];
+then echo -e "Contents of directory:${nc}" && echo && ls && echo -e ${yellow} && python -m SimpleHTTPServer $port
 
 else
-cd $dir && python -m SimpleHTTPServer $port
+cd $dir && echo -e "Contents of directory:${nc}" && echo && ls && echo -e ${yellow} && python -m SimpleHTTPServer $port
 
 fi
 

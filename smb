@@ -36,16 +36,16 @@ echo -e "${yellow}Your share is \\\\\\$ip\\\\$share${nc}"
 echo 
 
 if [ "$dir" = "www" ];
-then python $smbserver $share /var/www/html -smb2support
+then echo -e "${yellow}Contents of directory:${nc}" && echo && ls /var/www/html && echo && python $smbserver $share /var/www/html -smb2support
 
 elif [ "$dir" = "winbin" ];
-then python $smbserver $share /usr/share/windows-binaries -smb2support
+then echo -e "${yellow}Contents of directory:${nc}" && echo && ls /usr/share/windows-binaries && echo && python $smbserver $share /usr/share/windows-binaries -smb2support
 
 elif [ "$dir" = "." ];
-then python $smbserver  $share . -smb2support
+then echo -e "${yellow}Contents of directory:${nc}" && echo && ls && echo && python $smbserver  $share . -smb2support
 
 else
-python $smbserver $share $dir -smb2support
+echo -e "${yellow}Contents of directory:${nc}" && echo && ls $dir && echo && python $smbserver $share $dir -smb2support
 
 fi
 
